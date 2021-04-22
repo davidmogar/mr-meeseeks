@@ -10,3 +10,21 @@
 <h1></h1>
 
 This Ansible playbook installs and maintain all the packages and dotfiles I use in my development environment. It is based on roles and prepared to work over a fresh Fedora Server installation.
+
+
+## Roles
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="200">Name</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="roles/alacritty">alacritty</a></td>
+      <td>Installs <a href="https://github.com/alacritty/alacritty">Alacritty</a>.</td>
+    </tr>
+  </tbody>
+</table>

@@ -37,3 +37,12 @@
         user_home: "{{ getent.stdout }}"
 
   tags: always
+
+#
+# Install roles
+#
+- hosts: all
+  roles: [ alacritty ]
+  tags:
+    - alacritty
+    - desktop
