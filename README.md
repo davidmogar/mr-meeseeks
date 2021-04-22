@@ -69,6 +69,10 @@ Note that both, limit and tags, are optional arguments.
       <td><a href="roles/neovim">neovim</a></td>
       <td>Installs <a href="https://neovim.io/">Neovim</a>.</td>
     </tr>
+    <tr>
+      <td><a href="roles/sudo">sudo</a></td>
+      <td>Configures sudoers file.</td>
+    </tr>
   </tbody>
 </table>
 

@@ -39,6 +39,13 @@
   tags: always
 
 #
+# Set up sudo
+#
+- hosts: all
+  roles: [ sudo ]
+  tags: always
+
+#
 # Install roles
 #
 - hosts: all
