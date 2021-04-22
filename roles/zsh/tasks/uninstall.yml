@@ -1,0 +1,13 @@
+---
+
+- name: Ensure required packages are removed
+  become: yes
+  yum:
+    extra_args: --recursive
+    name: "{{ zsh_packages }}"
+    state: absent
+
+- name: Ensure config directory is removed
+  file:
+    path: "{{ user_home }}/.config/zsh"
+    state: absent

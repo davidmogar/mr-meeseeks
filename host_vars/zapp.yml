@@ -8,4 +8,5 @@
 # Any other value will ignore the role (neither install nor uninstall)
 #
 alacritty: 'install'
-neovim: 'install'
+neovim:    'install'
+zsh:       'install'

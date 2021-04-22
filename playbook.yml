@@ -57,3 +57,8 @@
 - hosts: all
   roles: [ neovim ]
   tags: neovim
+
+- hosts: all
+  roles: [ zsh ]
+  tags:
+    - zsh

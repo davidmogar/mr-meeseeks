@@ -73,6 +73,10 @@ Note that both, limit and tags, are optional arguments.
       <td><a href="roles/sudo">sudo</a></td>
       <td>Configures sudoers file.</td>
     </tr>
+    <tr>
+      <td><a href="roles/zsh">zsh</a></td>
+      <td>Installs <a href="https://www.zsh.org/">zsh</a> along with <a href="https://github.com/zsh-users/zsh-autosuggestions">autosuggestions</a> and <a href="https://github.com/zsh-users/zsh-syntax-highlighting">syntax-highlighting</a> plugins.</td>
+    </tr>
   </tbody>
 </table>
 
