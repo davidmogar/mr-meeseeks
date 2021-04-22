@@ -46,3 +46,7 @@
   tags:
     - alacritty
     - desktop
+
+- hosts: all
+  roles: [ neovim ]
+  tags: neovim

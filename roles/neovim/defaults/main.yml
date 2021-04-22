@@ -1,0 +1,4 @@
+---
+
+# 'ignore', 'install' or 'remove'
+neovim: 'ignore'
