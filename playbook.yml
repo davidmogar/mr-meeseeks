@@ -1,0 +1,39 @@
+---
+
+#
+# Ensure user_id is defined
+#
+- hosts: all
+  tasks:
+    - name: Assert that user_id is defined when running as root
+      assert:
+        msg: 'user_id must be defined when running as root (missing --extra-vars "user_id=USER"?)'
+        that:
+          - user_id is defined
+      when: ansible_facts['user_id'] == "root"
+
+    - name: Register user_id
+      set_fact:
+        user_id: "{{ ansible_user_id }}"
+      when: ansible_facts['user_id'] != "root"
+  tags: always
+
+#
+# Create main user and aur_builder
+#
+- hosts: all
+  tasks:
+    - import_role:
+        name: user
+      when: ansible_facts['user_id'] == "root"
+
+    - name: Get user home directory
+      changed_when: false
+      register: getent
+      shell: "getent passwd {{ user_id }}  | awk -F: '{ print $6 }'"
+
+    - name: Register user_id
+      set_fact:
+        user_home: "{{ getent.stdout }}"
+
+  tags: always
