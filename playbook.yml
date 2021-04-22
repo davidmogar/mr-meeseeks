@@ -59,6 +59,12 @@
   tags: neovim
 
 - hosts: all
+  roles: [ xdg-user-dirs ]
+  tags:
+    - desktop
+    - xdg-user-dirs
+
+- hosts: all
   roles: [ xorg ]
   tags:
     - desktop

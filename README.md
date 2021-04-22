@@ -74,6 +74,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Configures sudoers file.</td>
     </tr>
     <tr>
+      <td><a href="roles/xdg-user-dirs">xdg-user-dirs</a></td>
+      <td>Configures default directories, allowing to point them to external volumes.</td>
+    </tr>
+    <tr>
       <td><a href="roles/xorg">xorg</a></td>
       <td>Installs <a href="https://www.x.org/wiki">Xorg</a>.</td>
     </tr>

@@ -7,13 +7,20 @@
 # 'remove':  Uninstall the role
 # Any other value will ignore the role (neither install nor uninstall)
 #
-alacritty: 'install'
-neovim:    'install'
-xorg:      'install'
-zsh:       'install'
+alacritty:     'install'
+neovim:        'install'
+xdg_user_dirs: 'install'
+xorg:          'install'
+zsh:           'install'
 
 #
 # Role-specific settings
 #
 # Xorg graphics driver
 xorg_driver: xorg-x11-drv-intel
+
+#
+# Add git directory
+#
+xdg_user_dirs_extra_directories:
+  - git
