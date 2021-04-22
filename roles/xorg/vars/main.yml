@@ -1,0 +1,6 @@
+---
+
+xorg_packages:
+  - xorg-x11-server-Xorg
+  - xorg-x11-server-utils
+  - xorg-x11-xinit

@@ -59,6 +59,12 @@
   tags: neovim
 
 - hosts: all
+  roles: [ xorg ]
+  tags:
+    - desktop
+    - xorg
+
+- hosts: all
   roles: [ zsh ]
   tags:
     - zsh

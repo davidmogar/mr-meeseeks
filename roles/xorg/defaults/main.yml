@@ -1,0 +1,6 @@
+---
+
+# 'ignore', install' or 'remove'
+xorg: 'ignore'
+
+xorg_driver: xf86-video-vesa

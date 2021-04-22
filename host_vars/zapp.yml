@@ -9,4 +9,11 @@
 #
 alacritty: 'install'
 neovim:    'install'
+xorg:      'install'
 zsh:       'install'
+
+#
+# Role-specific settings
+#
+# Xorg graphics driver
+xorg_driver: xorg-x11-drv-intel

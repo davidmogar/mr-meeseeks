@@ -1,0 +1,7 @@
+---
+
+- name: Ensure required packages are removed
+  become: yes
+  yum:
+    name: "{{ xorg_packages }}"
+    state: absent
