@@ -8,6 +8,7 @@
 # Any other value will ignore the role (neither install nor uninstall)
 #
 alacritty:     'install'
+bspwm:         'install'
 neovim:        'install'
 xdg_user_dirs: 'install'
 xorg:          'install'

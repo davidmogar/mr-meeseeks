@@ -55,6 +55,12 @@
     - desktop
 
 - hosts: all
+  roles: [ bspwm ]
+  tags:
+    - bspwm
+    - desktop
+
+- hosts: all
   roles: [ neovim ]
   tags: neovim
 

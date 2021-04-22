@@ -66,6 +66,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://github.com/alacritty/alacritty">Alacritty</a>.</td>
     </tr>
     <tr>
+      <td><a href="roles/bspwm">bspwm</a></td>
+      <td>Installs <a href="https://github.com/baskerville/bspwm">bspwm</a> and set up the wallpaper by using <a href="https://github.com/derf/feh">feh</a>.</td>
+    </tr>
+    <tr>
       <td><a href="roles/neovim">neovim</a></td>
       <td>Installs <a href="https://neovim.io/">Neovim</a>.</td>
     </tr>
