@@ -10,6 +10,7 @@
 alacritty:     'install'
 bspwm:         'install'
 neovim:        'install'
+sxhkd:         'install'
 xdg_user_dirs: 'install'
 xorg:          'install'
 zsh:           'install'

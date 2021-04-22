@@ -65,6 +65,12 @@
   tags: neovim
 
 - hosts: all
+  roles: [ sxhkd ]
+  tags:
+    - desktop
+    - sxhkd
+
+- hosts: all
   roles: [ xdg-user-dirs ]
   tags:
     - desktop
