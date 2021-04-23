@@ -1,0 +1,24 @@
+---
+
+- name: Ensure rofi package is installed
+  become: yes
+  dnf:
+    name: "{{ rofi_package_name }}"
+    state: latest
+    update_cache: yes
+
+- name: Copy rofi themes
+  copy:
+    dest: "{{ user_home }}/.config"
+    group: "{{ user_id }}"
+    mode: 0655
+    owner: "{{ user_id }}"
+    src: rofi
+
+- name: Create rofi config file
+  template:
+    dest: "{{ user_home }}/.config/rofi/config.rasi"
+    group: "{{ user_id }}"
+    mode: 0644
+    owner: "{{ user_id }}"
+    src: "config.rasi.j2"

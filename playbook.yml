@@ -83,6 +83,12 @@
     - polybar
 
 - hosts: all
+  roles: [ rofi ]
+  tags:
+    - desktop
+    - rofi
+
+- hosts: all
   roles: [ sxhkd ]
   tags:
     - desktop

@@ -86,6 +86,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://github.com/polybar/polybar">polybar</a>.</td>
     </tr>
     <tr>
+      <td><a href="roles/rofi">rofi</a></td>
+      <td>Installs <a href="https://github.com/davatorium/rofi">rofi</a>.</td>
+    </tr>
+    <tr>
       <td><a href="roles/sudo">sudo</a></td>
       <td>Configures sudoers file.</td>
     </tr>
