@@ -98,6 +98,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://github.com/baskerville/sxhkd">sxhkd</a> and sets key bindings.</td>
     </tr>
     <tr>
+      <td><a href="roles/vscode">vscode</a></td>
+      <td>Installs <a href="https://code.visualstudio.com/">VS Code</a>.</td>
+    </tr>
+    <tr>
       <td><a href="roles/xdg-user-dirs">xdg-user-dirs</a></td>
       <td>Configures default directories, allowing to point them to external volumes.</td>
     </tr>

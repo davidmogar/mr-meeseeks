@@ -1,0 +1,13 @@
+---
+
+- name: Ensure vscode is removed
+  become: yes
+  pacman:
+    extra_args: --recursive
+    name: "{{ vscode_package_name }}"
+    state: absent
+
+- name: Ensure repository is removed
+  file:
+    path: "/etc/yum.repos.d/vscode.repo"
+    state: absent

@@ -95,6 +95,10 @@
     - sxhkd
 
 - hosts: all
+  roles: [ vscode ]
+  tags: vscode
+
+- hosts: all
   roles: [ xdg-user-dirs ]
   tags:
     - desktop

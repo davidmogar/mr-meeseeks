@@ -1,0 +1,22 @@
+---
+
+- name: Import key
+  become: yes
+  command:
+    cmd: "rpm --import https://packages.microsoft.com/keys/microsoft.asc"
+    warn: false
+
+- name: Add repository
+  copy:
+    dest: "/etc/yum.repos.d/vscode.repo"
+    group: "{{ user_id }}"
+    mode: 0755
+    owner: "{{ user_id }}"
+    src: vscode.repo
+
+- name: Ensure vscode is installed
+  become: yes
+  pacman:
+    name: "{{ vscode_package_name }}"
+    state: latest
+    update_cache: yes
