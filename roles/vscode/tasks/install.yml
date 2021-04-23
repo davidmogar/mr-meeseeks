@@ -16,7 +16,7 @@
 
 - name: Ensure vscode is installed
   become: yes
-  pacman:
+  dnf:
     name: "{{ vscode_package_name }}"
     state: latest
     update_cache: yes
