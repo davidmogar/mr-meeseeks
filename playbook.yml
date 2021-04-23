@@ -61,6 +61,12 @@
     - desktop
 
 - hosts: all
+  roles: [ fonts ]
+  tags:
+    - desktop
+    - fonts
+
+- hosts: all
   roles: [ neovim ]
   tags: neovim
 
