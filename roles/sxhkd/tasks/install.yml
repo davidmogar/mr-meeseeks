@@ -2,7 +2,7 @@
 
 - name: Ensure sxhkd package is installed
   become: yes
-  yum:
+  dnf:
     name: "{{ sxhkd_packages_name }}"
     state: latest
     update_cache: yes

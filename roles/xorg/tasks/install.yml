@@ -2,7 +2,7 @@
 
 - name: Ensure required packages are installed
   become: yes
-  yum:
+  dnf:
     name: "{{ xorg_packages + [ xorg_driver ] }}"
     state: latest
     update_cache: yes

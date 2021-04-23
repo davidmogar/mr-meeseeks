@@ -2,7 +2,7 @@
 
 - name: Ensure required package is installed
   become: yes
-  yum:
+  dnf:
     name: "{{ xdg_user_dirs_package_name }}"
     state: latest
     update_cache: yes

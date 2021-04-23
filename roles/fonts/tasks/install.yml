@@ -2,7 +2,7 @@
 
 - name: Ensure required packages are installed
   become: yes
-  yum:
+  dnf:
     name: "{{ fonts_packages }}"
     state: latest
     update_cache: yes

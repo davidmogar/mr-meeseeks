@@ -2,7 +2,7 @@
 
 - name: Ensure required packages are removed
   become: yes
-  yum:
+  dnf:
     name: "{{ alacritty_package_name }}"
     state: absent
 

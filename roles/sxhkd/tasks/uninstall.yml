@@ -2,7 +2,7 @@
 
 - name: Ensure sxhkd package is removed
   become: yes
-  yum:
+  dnf:
     name: "{{ sxhkd_package_name }}"
     state: absent
 
