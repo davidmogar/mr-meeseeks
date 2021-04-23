@@ -10,6 +10,7 @@
 - name: Enable chrome repository
   args:
     creates: "/etc/yum.repos.d/{{ chrome_repository }}.repo"
+  become: yes
   command:
     cmd: "dnf config-manager --add-repo {{ chrome_repository }}"
     warn: false
