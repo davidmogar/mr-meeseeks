@@ -6,3 +6,35 @@
     name: "{{ fonts_packages }}"
     state: latest
     update_cache: yes
+
+- name: Create temporary directory
+  register: temp_directory
+  tempfile:
+    state: directory
+    suffix: build
+
+- name: Checkout Font Awesome repo
+  git:
+    repo: "https://github.com/FortAwesome/Font-Awesome.git"
+    dest: "{{ temp_directory.path }}"
+  when: temp_directory.path is defined
+
+- name: Create fontawesome directory
+  become: yes
+  file:
+    path: "/usr/share/fonts/fontawesome"
+    state: directory
+
+- name: Copy Font Awesome brands ttf files
+  become: yes
+  copy:
+    src: "{{ item }}"
+    dest: "/usr/share/fonts/fontawesome"
+  with_fileglob: "{{ temp_directory.path }}/webfonts/*.ttf"
+  when: temp_directory.path is defined
+
+- name: Remove temporary directory
+  file:
+    path: "{{ temp_directory.path }}"
+    state: absent
+  when: temp_directory.path is defined

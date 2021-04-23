@@ -1,5 +1,17 @@
 ---
 
+- name: Check if fontawesome directory exists
+    stat:
+      path: "/usr/share/fonts/fontawesome"
+    register: fontawesome_directory
+
+- name: Remove Font Awesome brands fonts
+  file:
+    path: "{{ item }}"
+    state: absent
+  when: fontawesome_directory.exists
+  with_fileglob: "{{ fontawesome_directory.path }}/*.ttf"
+
 - name: Ensure required packages are removed
   become: yes
   dnf:
