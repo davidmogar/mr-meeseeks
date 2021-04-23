@@ -117,7 +117,7 @@ Note that both, limit and tags, are optional arguments.
 Some of the roles defined above allow to change their theme, affecting the look of the installed applications. This theme can be selected by defining an existing value for the `theme` variable:
 
 ```yaml1
-theme: dmg_blue
+theme: redhat
 ```
 
 The list of available themes can be checked by listing the files inside the `files/themes` directory in any customizable role such as <a href="roles/alacritty/files/themes">alacritty</a>.
