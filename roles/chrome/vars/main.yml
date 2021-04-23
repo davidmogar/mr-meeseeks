@@ -1,0 +1,8 @@
+---
+
+chrome_package_name: google-chrome-stable
+
+chrome_required_packages:
+  - fedora-workstation-repositories
+
+chrome_repository: google-chrome

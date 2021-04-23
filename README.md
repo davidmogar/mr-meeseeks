@@ -70,6 +70,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://github.com/baskerville/bspwm">bspwm</a> and set up the wallpaper by using <a href="https://github.com/derf/feh">feh</a>.</td>
     </tr>
     <tr>
+      <td><a href="roles/chrome">chrome</a></td>
+      <td>Installs <a href="https://www.google.com/chrome/">Chrome</a>.</td>
+    </tr>
+    <tr>
       <td><a href="roles/fonts">fonts</a></td>
       <td>Installs a curated <a href="roles/fonts/vars/main.yml">list</a> of fonts.</td>
     </tr>

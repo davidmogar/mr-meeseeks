@@ -1,0 +1,22 @@
+---
+
+- name: Ensure chrome dependencies are installed
+  become: yes
+  dnf:
+    name: "{{ chrome_required_packages }}"
+    state: latest
+    update_cache: yes
+
+- name: Enable chrome repository
+  args:
+    creates: "/etc/yum.repos.d/{{ chrome_repository }}.repo"
+  command:
+    cmd: "dnf config-manager --add-repo {{ chrome_repository }}"
+    warn: false
+
+- name: Ensure chrome is installed
+  become: yes
+  dnf:
+    name: "{{ chrome_package_name }}"
+    state: latest
+    update_cache: yes

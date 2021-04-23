@@ -9,6 +9,7 @@
 #
 alacritty:     'install'
 bspwm:         'install'
+chrome:        'install'
 fonts:         'install'
 neovim:        'install'
 polybar:       'install'

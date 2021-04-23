@@ -1,0 +1,8 @@
+---
+
+- name: Ensure packages are removed
+  become: yes
+  dnf:
+    name: "{{ chrome_required_packages + [ chrome_package_name ] }}"
+    state: latest
+    update_cache: yes

@@ -1,0 +1,7 @@
+---
+
+- include_tasks: install.yml
+  when: chrome == 'install'
+
+- include_tasks: uninstall.yml
+  when: chrome == 'remove'
