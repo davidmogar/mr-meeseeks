@@ -1,0 +1,12 @@
+---
+
+- name: Ensure required packages are removed
+  become: yes
+  yum:
+    name: "{{ polybar_packages }}"
+    state: absent
+
+- name: Ensure config directory is removed
+  file:
+    path: "{{ user_home }}/.config/polybar"
+    state: absent

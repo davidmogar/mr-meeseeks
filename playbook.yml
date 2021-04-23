@@ -71,6 +71,12 @@
   tags: neovim
 
 - hosts: all
+  roles: [ polybar ]
+  tags:
+    - desktop
+    - polybar
+
+- hosts: all
   roles: [ sxhkd ]
   tags:
     - desktop
