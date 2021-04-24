@@ -1,3 +1,3 @@
 {% for directory, path in xdg_user_dirs_default_directories.items() %}
-XDG_{{ directory | upper }}_DIR="$HOME/{{ path }}"
+XDG_{{ directory | upper }}_DIR="$HOME/{{ xdg_user_dirs_capitalize | ternary(path | capitalize, path | lower) }}"
 {% endfor %}

@@ -23,7 +23,7 @@
   file:
     group: "{{ user_id }}"
     owner: "{{ user_id }}"
-    path: "{{ user_home }}/{{ item | capitalize }}"
+    path: "{{ user_home }}/{{ xdg_user_dirs_capitalize | ternary(item | capitalize, item | lower) }}"
     state: directory
     mode: 0755
   loop: "{{ xdg_directories }}"

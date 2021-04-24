@@ -27,7 +27,8 @@ zsh:           'install'
 xorg_driver: xorg-x11-drv-intel
 
 #
-# Add git directory
+# Configure XDG directorires
 #
+xdg_user_dirs_capitalize: no
 xdg_user_dirs_extra_directories:
   - git
