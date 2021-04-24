@@ -1,0 +1,17 @@
+---
+
+cli_utilities_packages:
+  - fzf
+  - htop
+  - iotop
+  - jq
+  - ncdu
+  - nmap
+  - ranger
+  - strace
+  - tig
+  - unzip
+  - util-linux-user
+  - wget
+  - xclip
+  - xdg-utils

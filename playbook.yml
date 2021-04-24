@@ -67,6 +67,10 @@
     - desktop
 
 - hosts: all
+  roles: [ cli-utilities ]
+  tags: cli-utilities
+
+- hosts: all
   roles: [ fonts ]
   tags:
     - desktop

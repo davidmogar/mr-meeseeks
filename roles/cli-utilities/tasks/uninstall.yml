@@ -1,0 +1,7 @@
+---
+
+- name: Ensure required packages are removed
+  become: yes
+  dnf:
+    name: "{{ cli_utilities_packages }}"
+    state: absent

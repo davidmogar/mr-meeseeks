@@ -74,6 +74,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://www.google.com/chrome/">Chrome</a>.</td>
     </tr>
     <tr>
+      <td><a href="roles/cli-utilities">cli-utilities</a></td>
+      <td>Installs a curated <a href="roles/cli-utilities/vars/main.yml">list</a> of CLI utilities.</td>
+    </tr>
+    <tr>
       <td><a href="roles/fonts">fonts</a></td>
       <td>Installs a curated <a href="roles/fonts/vars/main.yml">list</a> of fonts.</td>
     </tr>
