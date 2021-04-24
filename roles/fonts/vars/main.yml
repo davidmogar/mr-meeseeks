@@ -1,7 +1,6 @@
 ---
 
 fonts_packages:
-  - fontawesome-fonts
   - google-noto-cjk-fonts
   - google-noto-emoji-fonts
   - google-noto-sans-fonts
