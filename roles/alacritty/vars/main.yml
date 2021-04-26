@@ -1,3 +1,5 @@
 ---
 
-alacritty_package_name: alacritty
+alacritty_packages:
+  - alacritty
+  - mesa-dri-drivers
