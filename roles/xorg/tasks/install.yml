@@ -3,6 +3,6 @@
 - name: Ensure required packages are installed
   become: yes
   dnf:
-    name: "{{ xorg_packages + [ xorg_driver ] }}"
+    name: "{{ xorg_packages + xorg_drivers_and_extras }}"
     state: latest
     update_cache: yes

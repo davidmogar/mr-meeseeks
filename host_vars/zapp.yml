@@ -25,7 +25,7 @@ zsh:           'install'
 # Role-specific settings
 #
 # Xorg graphics driver
-xorg_driver: xorg-x11-drv-intel
+xorg_drivers_and_extras: []
 
 #
 # Configure XDG directorires

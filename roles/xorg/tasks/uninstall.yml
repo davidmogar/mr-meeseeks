@@ -3,5 +3,5 @@
 - name: Ensure required packages are removed
   become: yes
   dnf:
-    name: "{{ xorg_packages }}"
+    name: "{{ xorg_packages + xorg_drivers_and_extras }}"
     state: absent
