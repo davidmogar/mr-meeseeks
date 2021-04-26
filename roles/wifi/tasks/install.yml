@@ -1,0 +1,23 @@
+---
+
+- name: Ensure required packages are installed
+  become: yes
+  dnf:
+    name: "{{ wifi_packages }}"
+    state: latest
+    update_cache: yes
+
+- name: Ensure firmware is installed
+  become: yes
+  dnf:
+    name: "{{ wifi_firmware }}"
+    state: latest
+    update_cache: yes
+  when: wifi_firmware is defined
+
+# TODO: Use a handler
+- name: Restart NetworkManager
+  become: yes
+  service:
+    name: NetworkManager
+    state: restarted

@@ -1,0 +1,19 @@
+---
+
+- name: Ensure required packages are removed
+  become: yes
+  dnf:
+    name: "{{ wifi_packages }}"
+    state: absent
+
+- name: Ensure firmware is removed
+  become: yes
+  dnf:
+    name: "{{ wifi_firmware }}"
+    state: absent
+  
+- name: Restart NetworkManager
+  become: yes
+  service:
+    name: NetworkManager
+    state: restarted

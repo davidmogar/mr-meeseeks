@@ -1,0 +1,7 @@
+---
+
+- include_tasks: install.yml
+  when: wifi == 'install'
+
+- include_tasks: uninstall.yml
+  when: wifi == 'remove'
