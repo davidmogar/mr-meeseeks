@@ -12,7 +12,7 @@
     creates: "/etc/yum.repos.d/{{ chrome_repository }}.repo"
   become: yes
   command:
-    cmd: "dnf config-manager --add-repo {{ chrome_repository }}"
+    cmd: "dnf config-manager --set-enabled {{ chrome_repository }}"
     warn: false
 
 - name: Ensure chrome is installed
