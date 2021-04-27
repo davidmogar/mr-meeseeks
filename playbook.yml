@@ -55,6 +55,11 @@
     - desktop
 
 - hosts: all
+  roles: [ bluetooth ]
+  tags:
+    - bluetooth
+
+- hosts: all
   roles: [ bspwm ]
   tags:
     - bspwm

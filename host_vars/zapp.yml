@@ -8,6 +8,7 @@
 # Any other value will ignore the role (neither install nor uninstall)
 #
 alacritty:     'install'
+bluetooth:     'install'
 bspwm:         'install'
 chrome:        'install'
 cli_utilities: 'install'

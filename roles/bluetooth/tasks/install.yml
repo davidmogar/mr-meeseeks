@@ -1,0 +1,15 @@
+---
+
+- name: Ensure bluetooth package is installed
+  become: yes
+  dnf:
+    name: "{{ bluetooth_package_name }}"
+    state: latest
+    update_cache: yes
+
+- name: Make sure bluetooth service is restarted
+  become: yes
+  systemd:
+    enabled: yes
+    name: bluetooth
+    state: restarted

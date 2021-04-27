@@ -1,0 +1,7 @@
+---
+
+- name: Ensure bluetooth package is removed
+  become: yes
+  dnf:
+    name: "{{ bluetooth_package_name }}"
+    state: absent
