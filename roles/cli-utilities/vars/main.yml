@@ -5,6 +5,7 @@ cli_utilities_packages:
   - htop
   - iotop
   - jq
+  - mlocate
   - ncdu
   - nmap
   - ranger
