@@ -1,0 +1,6 @@
+---
+
+sound_packages:
+  - alsa-utils
+  - pavucontrol
+  - pipewire

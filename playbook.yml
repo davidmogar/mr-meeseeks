@@ -93,6 +93,12 @@
     - rofi
 
 - hosts: all
+  roles: [ sound ]
+  tags:
+    - desktop
+    - sound
+
+- hosts: all
   roles: [ sxhkd ]
   tags:
     - desktop

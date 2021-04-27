@@ -10,11 +10,12 @@
 alacritty:     'install'
 bspwm:         'install'
 chrome:        'install'
-cli_utilities:  'install'
+cli_utilities: 'install'
 fonts:         'install'
 neovim:        'install'
 polybar:       'install'
 rofi:          'install'
+sound:         'install'
 sxhkd:         'install'
 vscode:        'install'
 xdg_user_dirs: 'install'
@@ -25,6 +26,9 @@ zsh:           'install'
 #
 # Role-specific settings
 #
+
+sound_alsa_drop_ins:
+  - "options snd-intel-dspcfg dsp_driver=1"
 
 # Wi-Fi firmware
 wifi_firmware: iwl7260-firmware
