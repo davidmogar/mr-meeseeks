@@ -6,3 +6,9 @@
     name: "{{ xorg_packages + xorg_drivers_and_extras }}"
     state: latest
     update_cache: yes
+
+- name: Copy config files
+  become: yes
+  copy:
+    dest: "/etc/X11"
+    src: xorg.conf.d
