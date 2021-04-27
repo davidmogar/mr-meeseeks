@@ -115,6 +115,11 @@
     - xorg
 
 - hosts: all
+  roles: [ wifi ]
+  tags:
+    - wifi
+
+- hosts: all
   roles: [ zsh ]
   tags:
     - zsh

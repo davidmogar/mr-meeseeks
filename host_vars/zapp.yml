@@ -19,11 +19,16 @@ sxhkd:         'install'
 vscode:        'install'
 xdg_user_dirs: 'install'
 xorg:          'install'
+wifi:          'install'
 zsh:           'install'
 
 #
 # Role-specific settings
 #
+
+# Wi-Fi firmware
+wifi_firmware: iwl7260-firmware
+
 # Xorg graphics driver
 xorg_drivers_and_extras: []
 
