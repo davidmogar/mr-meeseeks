@@ -7,13 +7,24 @@
     state: latest
     update_cache: yes
 
-- name: Copy rofi themes
-  copy:
-    dest: "{{ user_home }}/.config"
+- name: Create config directory
+  file:
     group: "{{ user_id }}"
-    mode: 0655
+    mode: 0755
     owner: "{{ user_id }}"
-    src: rofi
+    path: "{{ user_home }}/.config/rofi/themes"
+    state: directory
+  register: theme_directory
+
+- name: Copy rofi themes
+  template:
+    dest: "{{ theme_directory.path }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
+    group: "{{ user_id }}"
+    mode: 0644
+    owner: "{{ user_id }}"
+    src: "{{ item }}"
+  with_fileglob:
+    - "../templates/themes/*.j2"
 
 - name: Create rofi config file
   template:

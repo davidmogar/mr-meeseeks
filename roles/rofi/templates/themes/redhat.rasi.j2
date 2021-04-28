@@ -1,0 +1,49 @@
+* {
+  font: "{{ theme.fonts.text.sans.normal }} 12";
+}
+
+element {
+  background-color: {{ theme.colors.gray_light }};
+  padding: 10px;
+  text-color: {{ theme.colors.black }};
+}
+
+element normal active {
+  background-color: {{ theme.colors.gray_light }};
+  text-color: {{ theme.colors.red }};
+}
+
+element selected {
+  background-color: {{ theme.colors.red }};
+  text-color: {{ theme.colors.white }};
+}
+
+entry, inputbar, prompt, textbox-prompt-colon {
+  background-color: {{ theme.colors.gray_light }};
+  font: "{{ theme.fonts.text.sans.semibold }} 12";
+  text-color: {{ theme.colors.black }};
+}
+
+inputbar {
+  children: [ prompt, textbox-prompt-colon, entry ];
+  padding: 10px;
+}
+
+listview {
+  background-color: {{ theme.colors.gray_light }};
+}
+
+mainbox {
+  background-color: {{ theme.colors.red }};
+}
+
+textbox-prompt-colon {
+  expand: false;
+  margin: 0 1ch 0 0;
+  str: ":";
+}
+
+window {
+  location: center;
+  width: 30%;
+}
