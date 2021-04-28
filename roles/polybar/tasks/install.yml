@@ -20,5 +20,5 @@
     dest: "{{ user_home }}/.config/polybar/config"
     group: "{{ user_id }}"
     owner: "{{ user_id }}"
-    src: "{{ user_home }}/.config/polybar/themes/{{ theme }}"
+    src: "{{ user_home }}/.config/polybar/themes/{{ theme_name }}"
     state: link

@@ -28,7 +28,7 @@
     dest: "{{ user_home }}/.config/zsh/themes/default.zsh"
     group: "{{ user_id }}"
     owner: "{{ user_id }}"
-    src: "{{ user_home }}/.config/zsh/themes/{{ theme }}.zsh"
+    src: "{{ user_home }}/.config/zsh/themes/{{ theme_name }}.zsh"
     state: link
 
 - name: Use zsh as the default shell
