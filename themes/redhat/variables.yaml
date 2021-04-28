@@ -1,0 +1,25 @@
+---
+
+colors:
+  black: "#000000"
+  gray_dark: "#4d4d4d"
+  gray_light: "#dedede"
+  gray: "#aaaaaa"
+  red_dark: "#be0000"
+  red_darker: "#5f0000"
+  red_light: "#f5606d"
+  red: "#be0000"
+  white: "#ffffff"
+
+fonts:
+  icons: "Material Icons"
+  isologotype:
+    icon: "Font Awesome 5 Brands Regular"
+    text: "Red Hat Display Black"
+  text:
+    mono: "Inconsolata"
+    sans:
+      bold: "Noto Sans Bold"
+      medium: "Noto Sans Medium"
+      normal: "Noto Sans"
+      semibold: "Noto Sans SemiBold"

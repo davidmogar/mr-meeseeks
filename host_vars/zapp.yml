@@ -1,5 +1,7 @@
 ---
 
+theme_name: redhat
+
 #
 # Select roles to install
 #

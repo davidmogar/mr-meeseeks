@@ -1,5 +1,13 @@
 ---
 
+- hosts: all
+  tasks:
+    - name: Include theme variables
+      include_vars:
+        file: "themes/{{ theme_name }}/variables.yaml"
+        name: theme
+  tags: always
+
 #
 # Ensure user_id is defined
 #
@@ -35,7 +43,6 @@
     - name: Register user_id
       set_fact:
         user_home: "{{ getent.stdout }}"
-
   tags: always
 
 #
