@@ -28,9 +28,9 @@ font-2                   = Font Awesome 5 Brands Regular:size=20;5
 font-3                   = Material Icons:size=16;5
 foreground               = ${colors.white}
 height                   = 35
-modules-center           = spotify
+modules-center           = date
 modules-left             = red-hat bspwm
-modules-right            = battery date
+modules-right            = batteryp
 padding-left             = 5
 padding-right            = 5
 scroll-down              = bspwm-deskprev
@@ -72,9 +72,9 @@ label-urgent-padding     = 4
 
 [module/date]
 type                     = internal/date
-date-alt                 = %A, %B %d, %Y
+date                     = %b %d
 interval                 = 5
-label                    = " %date% %time%"
+label                    = "%date%  %time%"
 time                     = %H:%M
 
 [module/red-hat]
