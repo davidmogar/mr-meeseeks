@@ -1,0 +1,5 @@
+---
+
+dunst_packages:
+  - dunst
+  - libnotify

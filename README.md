@@ -82,6 +82,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs a curated <a href="roles/cli-utilities/vars/main.yml">list</a> of CLI utilities.</td>
     </tr>
     <tr>
+      <td><a href="roles/dunst">dunst</a></td>
+      <td>Configures system notifications to use <a href="https://github.com/dunst-project/dunst">dunst</a>. The flag <a href="chrome://flags/#enable-native-notifications">enable-native-notifications</a> is required to get native notifications with Chrome.</td>
+    </tr>
+    <tr>
       <td><a href="roles/fonts">fonts</a></td>
       <td>Installs a curated <a href="roles/fonts/vars/main.yml">list</a> of fonts.</td>
     </tr>

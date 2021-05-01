@@ -83,6 +83,12 @@
   tags: cli-utilities
 
 - hosts: all
+  roles: [ dunst ]
+  tags:
+    - desktop
+    - dunst
+
+- hosts: all
   roles: [ fonts ]
   tags:
     - desktop
