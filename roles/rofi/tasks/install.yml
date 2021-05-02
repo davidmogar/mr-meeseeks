@@ -12,13 +12,22 @@
     group: "{{ user_id }}"
     mode: 0755
     owner: "{{ user_id }}"
-    path: "{{ user_home }}/.config/rofi/themes"
+    path: "{{ user_home }}/.config/rofi"
     state: directory
-  register: theme_directory
+  register: config_directory
+
+- name: Create themes directory
+  file:
+    group: "{{ user_id }}"
+    mode: 0755
+    owner: "{{ user_id }}"
+    path: "{{ config_directory.path }}/themes"
+    state: directory
+  register: themes_directory
 
 - name: Copy rofi themes
   template:
-    dest: "{{ theme_directory.path }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
+    dest: "{{ themes_directory.path }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
     group: "{{ user_id }}"
     mode: 0644
     owner: "{{ user_id }}"
@@ -28,7 +37,7 @@
 
 - name: Create rofi config file
   template:
-    dest: "{{ user_home }}/.config/rofi/config.rasi"
+    dest: "{{ config_directory.path }}/config.rasi"
     group: "{{ user_id }}"
     mode: 0644
     owner: "{{ user_id }}"
