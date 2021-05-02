@@ -2,14 +2,53 @@
 
 colors:
   black: "#000000"
-  gray_dark: "#4d4d4d"
-  gray_light: "#dedede"
-  gray: "#aaaaaa"
-  red_dark: "#be0000"
-  red_darker: "#5f0000"
-  red_light: "#f5606d"
-  red: "#be0000"
+  blue:
+    dark: "#be0000"
+    dim: "#f56d6d"
+    normal: "#ee0000"
+  gray:
+    dark: "#4d4d4d"
+    darker: "#2e2e2e"
+    dim: "#dedede"
+    dimmer: "#f3f3f3"
+    normal: "#aaaaaa"
+  green:
+    dark: "#689b7a"
+    dim: "#a6d3b6"
+    normal: "#82c299"
+  indigo:
+    dark: "#27579a"
+    dim: "#6c97d3"
+    normal: "#316dc1"
+  orange:
+    dark: "#c65e2b"
+    dim: "#fab890"
+    normal: "#f7823c"
+  purple:
+    dark: "#4b3398"
+    dim: "#8c77d1"
+    normal: "#5e40be"
+  red:
+    dark: "#be0000"
+    dim: "#f56d6d"
+    normal: "#ee0000"
+  teal:
+    dark: "#368a8c"
+    dim: "#42adaf"
+    normal: "#43adaf"
   white: "#ffffff"
+  yellow_green:
+    dark: "#9aab68"
+    dim: "#d9e6b4"
+    normal: "#c0d682"
+  yellow_orange:
+    dark: "#c8883f"
+    dim: "#fcce9a"
+    normal: "#faaa4f"
+  yellow:
+    dark: "#ccbb56"
+    dim: "#fff7c4"
+    normal: "#ffea6c"
 
 fonts:
   icons: "Material Icons"
@@ -17,9 +56,15 @@ fonts:
     icon: "Font Awesome 5 Brands Regular"
     text: "Red Hat Display Black"
   text:
-    mono: "Inconsolata"
+    mono:
+      bold: "Inconsolata Bold"
+      light: "Inconsolata Light"
+      medium: "Inconsolata Medium"
+      normal: "Inconsolata"
+      sermibold: Inconsolata SemiBold"
     sans:
       bold: "Noto Sans Bold"
+      light: "Noto Sans Light"
       medium: "Noto Sans Medium"
       normal: "Noto Sans"
       semibold: "Noto Sans SemiBold"

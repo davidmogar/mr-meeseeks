@@ -3,23 +3,23 @@
 }
 
 element {
-  background-color: {{ theme.colors.gray_light }};
+  background-color: {{ theme.colors.gray.dim }};
   padding: 10px;
   text-color: {{ theme.colors.black }};
 }
 
 element normal active {
-  background-color: {{ theme.colors.gray_light }};
-  text-color: {{ theme.colors.red }};
+  background-color: {{ theme.colors.gray.dim }};
+  text-color: {{ theme.colors.red.normal }};
 }
 
 element selected {
-  background-color: {{ theme.colors.red }};
+  background-color: {{ theme.colors.red.normal }};
   text-color: {{ theme.colors.white }};
 }
 
 entry, inputbar, prompt, textbox-prompt-colon {
-  background-color: {{ theme.colors.gray_light }};
+  background-color: {{ theme.colors.gray.dim }};
   font: "{{ theme.fonts.text.sans.semibold }} 12";
   text-color: {{ theme.colors.black }};
 }
@@ -30,7 +30,7 @@ inputbar {
 }
 
 listview {
-  background-color: {{ theme.colors.gray_light }};
+  background-color: {{ theme.colors.gray.dim }};
 }
 
 mainbox {
