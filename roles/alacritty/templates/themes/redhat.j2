@@ -1,0 +1,42 @@
+background_opacity: 1
+
+colors:
+  bright:
+    black:             '{{ theme.colors.gray.dark }}'
+    blue:              '{{ theme.colors.indigo.light }}'
+    cyan:              '{{ theme.colors.blue.light }}'
+    green:             '{{ theme.colors.green.light }}'
+    magenta:           '{{ theme.colors.purple.light }}'
+    red:               '{{ theme.colors.red.light }}'
+    white:             '{{ theme.colors.white }}'
+    yellow:            '{{ theme.colors.yellow.light }}'
+  normal:
+    black:             '{{ theme.colors.gray.darker }}'
+    blue:              '{{ theme.colors.indigo.normal }}'
+    cyan:              '{{ theme.colors.blue.normal }}'
+    green:             '{{ theme.colors.green.normal }}'
+    magenta:           '{{ theme.colors.purple.normal }}'
+    red:               '{{ theme.colors.red.normal }}'
+    white:             '{{ theme.colors.gray.light }}'
+    yellow:            '{{ theme.colors.yellow.normal }}'
+  primary:
+    background:        '{{ theme.colors.black }}'
+    bright_background: '{{ theme.colors.gray.dark }}'
+    bright_foreground: '{{ theme.colors.white }}'
+    foreground:        '{{ theme.colors.white }}'
+
+font:
+  bold:
+    family: {{ theme.fonts.mono }}
+    style: Bold
+  italic:
+    family: {{ theme.fonts.mono }}
+    style: Italic
+  normal:
+    family: {{ theme.fonts.mono }}
+  size: 8
+
+window:
+  padding:
+    x: 10
+    y: 8
