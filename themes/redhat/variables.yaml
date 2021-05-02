@@ -55,16 +55,5 @@ fonts:
   isologotype:
     icon: "Font Awesome 5 Brands Regular"
     text: "Red Hat Display Black"
-  text:
-    mono:
-      bold: "Inconsolata Bold"
-      light: "Inconsolata Light"
-      medium: "Inconsolata Medium"
-      normal: "Inconsolata"
-      sermibold: Inconsolata SemiBold"
-    sans:
-      bold: "Noto Sans Bold"
-      light: "Noto Sans Light"
-      medium: "Noto Sans Medium"
-      normal: "Noto Sans"
-      semibold: "Noto Sans SemiBold"
+  mono: "Inconsolata"
+  sans: "Noto Sans"
