@@ -53,6 +53,7 @@ bindkey '^H'      backward-kill-word # [Ctrl-Backspace]  - delete word before th
 bindkey '^[[1;5D' backward-word      # [Ctrl-LeftArrow]  - move backward one word
 bindkey '^[[1;5C' forward-word       # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[3;5~' kill-word          # [Ctrl-Delelete]   - delete word after the cursor
+bindkey '^K'      kill-line          # [Ctrl-K]          - delete line forwards from cursor
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
