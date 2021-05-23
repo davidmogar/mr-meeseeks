@@ -1,15 +1,15 @@
 * {
-  font: "{{ theme.fonts.sans }} 12";
+  font: "{{ theme.fonts.redhat.text }} 12";
 }
 
 element {
-  background-color: {{ theme.colors.gray.light }};
+  background-color: {{ theme.colors.gray.n1a }};
   padding: 10px;
-  text-color: {{ theme.colors.black }};
+  text-color: {{ theme.colors.white }};
 }
 
 element normal active {
-  background-color: {{ theme.colors.gray.light }};
+  background-color: {{ theme.colors.gray.n1a }};
   text-color: {{ theme.colors.red.normal }};
 }
 
@@ -19,9 +19,9 @@ element selected {
 }
 
 entry, inputbar, prompt, textbox-prompt-colon {
-  background-color: {{ theme.colors.gray.light }};
-  font: "{{ theme.fonts.sans }} SemiBold 12";
-  text-color: {{ theme.colors.black }};
+  background-color: {{ theme.colors.gray.n1a }};
+  font: "{{ theme.fonts.redhat.text }} Medium 12";
+  text-color: {{ theme.colors.white }};
 }
 
 inputbar {
@@ -30,7 +30,7 @@ inputbar {
 }
 
 listview {
-  background-color: {{ theme.colors.gray.light }};
+  background-color: {{ theme.colors.gray.n1a }};
 }
 
 mainbox {
@@ -44,6 +44,8 @@ textbox-prompt-colon {
 }
 
 window {
-  location: center;
+  anchor: north
+  location: north;
   width: 30%;
+  y-offset: 55px;
 }
