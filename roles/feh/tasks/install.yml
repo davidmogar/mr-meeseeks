@@ -1,0 +1,32 @@
+---
+
+- name: Ensure feh package is installed
+  become: yes
+  dnf:
+    name: "{{ feh_package_name }}"
+    state: latest
+    update_cache: yes
+
+- name: Create config directory
+  file:
+    group: "{{ user_id }}"
+    mode: 0755
+    owner: "{{ user_id }}"
+    path: "{{ user_home }}/.config/feh"
+    state: directory
+
+- name: Create set_wallpaper script
+  template:
+    dest: "{{ user_home }}/.config/feh/set_wallpapers.sh"
+    group: "{{ user_id }}"
+    mode: 0755
+    owner: "{{ user_id }}"
+    src: set_wallpapers.sh.j2
+
+- name: Add wallpapers
+  copy:
+    dest: "{{ user_home }}/.config/feh"
+    group: "{{ user_id}}"
+    mode: 0644
+    owner: "{{ user_id}}"
+    src: "{{ playbook_dir }}/themes/{{ theme_name }}/wallpapers"

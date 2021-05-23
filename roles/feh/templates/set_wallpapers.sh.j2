@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+active_monitors=$(xrandr --listactivemonitors | grep -v Monitors)
+
+IFS=$'\n'
+readarray -t <<< "$active_monitors"
+
+feh_command="feh --no-fehbg --bg-fill"
+
+for monitor in "${MAPFILE[@]}"
+do
+   resolution=$(awk '{print $3}' <<< "$monitor")
+   width=$(cut -d "/" -f1 <<< "$resolution")
+   height=$(cut -d "x" -f2 <<< "$resolution" | cut -d "/" -f1)
+
+   if [[ $width -gt $height ]]
+   then
+       feh_command="$feh_command ~/.config/feh/wallpapers/horizontal.png"
+   else
+       feh_command="$feh_command ~/.config/feh/wallpapers/vertical.png"
+   fi
+done
+
+eval "$feh_command"

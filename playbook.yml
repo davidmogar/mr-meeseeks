@@ -89,6 +89,13 @@
     - dunst
 
 - hosts: all
+  roles: [ feh ]
+  tags:
+    - bspwm
+    - desktop
+    - feh
+
+- hosts: all
   roles: [ fonts ]
   tags:
     - desktop

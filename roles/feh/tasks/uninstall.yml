@@ -1,0 +1,12 @@
+---
+
+- name: Ensure feh package is removed
+  become: yes
+  dnf:
+    name: "{{ feh_package_name }}"
+    state: absent
+
+- name: Ensure feh config directory is removed
+  file:
+    path: "{{ user_home }}/.config/feh"
+    state: absent
