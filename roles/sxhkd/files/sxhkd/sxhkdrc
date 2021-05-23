@@ -48,3 +48,12 @@ super + {Left,Down,Up,Right}
 # Open a terminal emulator
 super + Return
 	alacritty
+
+XF86MonBrightnessUp
+    light -A 5
+
+XF86MonBrightnessDown
+    light -U 5
+
+super + Escape
+    $HOME/.config/bspwm/bspwmrc
