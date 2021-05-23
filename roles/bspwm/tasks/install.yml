@@ -22,12 +22,3 @@
     mode: 0755
     owner: "{{ user_id }}"
     src: "bspwmrc.j2"
-
-- name: Add wallpapers
-  become: yes
-  copy:
-    dest: "{{ user_home }}/.config"
-    group: "{{ user_id}}"
-    mode: 0644
-    owner: "{{ user_id}}"
-    src: "feh"

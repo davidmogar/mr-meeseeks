@@ -1,48 +1,55 @@
 #!/bin/sh
 
-#------------------------------
-# Functions
-#------------------------------
 command_exists() {
-  command -v "$@" >/dev/null 2>&1
+    command -v "$1" > /dev/null 2>&1
 }
 
-#------------------------------
-# Start processes
-#------------------------------
-command_exists dunst && dunst &
-command_exists picom && picom &
-command_exists polybar && polybar top &
+configure_desktop() {
+    configure_monitors
 
-sxhkd &
+    xsetroot -cursor_name left_ptr
 
-#------------------------------
-# Fix default cursor
-#------------------------------
-xsetroot -cursor_name left_ptr
+    $HOME/.config/feh/set_wallpaper.sh
+    $HOME/.config/polybar/launch.sh
 
-#------------------------------
-# Toggle language with win + space
-#------------------------------
-setxkbmap us,es -option 'grp:win_space_toggle'
+    run_command picom
 
-#------------------------------
-# Configure bspwm
-#------------------------------
-bspc monitor -d 1 2 3 4 5 6
+    bspc config focus_follows_pointer     true
+    bspc config ignore_ewmh_focus         true
+    bspc config remove_disabled_monitors  true
+    bspc config remove_unplugged_monitors true
 
-bspc config focus_follows_pointer true
-bspc config top_padding 35
-bspc config window_gap 15
-
-bspc config ignore_ewmh_focus true
-
-bspc rule -a discord desktop=^5
-bspc rule -a Spotify desktop=^3
-bspc rule -a Thunderbird desktop=^4
-bspc rule -a Zathura state=tiled
-
-#------------------------------
-# Theme specific
-#------------------------------
+    # Theme specific
+{% filter indent(4, first=True) %}
 {% include "files/themes/" + theme_name %}
+{% endfilter %}
+
+}
+
+configure_keybindings() {
+    run_command sxhkd
+    setxkbmap us,es -option 'grp:win_space_toggle'
+}
+
+configure_monitors() {
+    monitors=$(xrandr --listactivemonitors | grep -v Monitors | wc -l)
+
+    if [[ $monitors -eq 1 ]]
+    then
+        autorandr -c mobile
+        bspc monitor -d main code music coffee communication organization
+    else
+        autorandr -c docked
+        bspc monitor DP-3-3 -d main code music coffee
+        bspc monitor DP-3-2 -d communication organization
+    fi
+}
+
+run_command() {
+    command_exists "$1" && killall -q "$1"
+    eval "$1 &"
+}
+
+configure_monitors
+configure_keybindings
+configure_desktop

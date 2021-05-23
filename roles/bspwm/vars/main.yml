@@ -2,5 +2,5 @@
 
 bspwm_packages:
   - bspwm
-  - feh
   - setxkbmap
+  - xsetroot
