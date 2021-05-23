@@ -98,6 +98,7 @@
 - hosts: all
   roles: [ fonts ]
   tags:
+    - bspwm
     - desktop
     - fonts
 
@@ -108,6 +109,7 @@
 - hosts: all
   roles: [ polybar ]
   tags:
+    - bspwm
     - desktop
     - polybar
 

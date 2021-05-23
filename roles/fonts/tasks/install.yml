@@ -7,34 +7,68 @@
     state: latest
     update_cache: yes
 
-- name: Create temporary directory
-  register: temp_directory
-  tempfile:
-    state: directory
-    suffix: build
-
-- name: Checkout Font Awesome repo
-  git:
-    repo: "https://github.com/FortAwesome/Font-Awesome.git"
-    dest: "{{ temp_directory.path }}"
-  when: temp_directory.path is defined
-
-- name: Create fontawesome directory
+- name: Create fonts directories
   become: yes
   file:
-    path: "/usr/share/fonts/fontawesome"
+    path: "{{ fonts_directory }}/{{ item }}"
     state: directory
+  with_items:
+    - fontawesome
+    - nerfonts
 
-- name: Copy Font Awesome brands ttf files
+- name: Fetch Fonts Awesome latest release webpage
+  uri:
+    follow_redirects: "yes"
+    method: GET
+    return_content: yes
+    url: "https://github.com/FortAwesome/Font-Awesome/releases/latest/"
+  check_mode: no
+  delay: 10
+  register: release_webpage_raw
+  retries: 30
+  until: release_webpage_raw is succeeded
+
+- name: Set Fonts Awesome download url
+  check_mode: no
+  set_fact:
+    fontawesome_zip: "{{ release_webpage_raw.content | regex_search(package_regex) }}"
+  vars:
+    package_regex: '/FortAwesome/Font-Awesome/releases/download/.*fontawesome.*desktop\.zip'
+
+- name: Ensure Fonts Awesome is downloaded
   become: yes
-  copy:
-    src: "{{ item }}"
-    dest: "/usr/share/fonts/fontawesome"
-  with_fileglob: "{{ temp_directory.path }}/webfonts/*.ttf"
-  when: temp_directory.path is defined
+  unarchive:
+    dest: "{{ fonts_directory }}/fontawesome"
+    exclude:
+      - "*/metadata/*"
+      - "*/svgs/*"
+    mode: 0755
+    remote_src: yes
+    src: "https://github.com{{ fontawesome_zip }}"
 
-- name: Remove temporary directory
-  file:
-    path: "{{ temp_directory.path }}"
-    state: absent
-  when: temp_directory.path is defined
+- name: Fetch Nerd Fonts latest release webpage
+  uri:
+    follow_redirects: "yes"
+    method: GET
+    return_content: yes
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/latest/"
+  check_mode: no
+  delay: 10
+  register: release_webpage_raw
+  retries: 30
+  until: release_webpage_raw is succeeded
+
+- name: Set Nerd Fonts download url
+  check_mode: no
+  set_fact:
+    nerdfonts_zip: "{{ release_webpage_raw.content | regex_search(package_regex) }}"
+  vars:
+    package_regex: '/ryanoasis/nerd-fonts/releases/download/.*3270\.zip'
+
+- name: Ensure Nerd Fonts is downloaded
+  become: yes
+  unarchive:
+    dest: "{{ fonts_directory }}/nerfonts"
+    mode: 0755
+    remote_src: yes
+    src: "https://github.com{{ nerdfonts_zip }}"

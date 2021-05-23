@@ -1,0 +1,128 @@
+[global/wm]
+margin-bottom            = 0
+margin-top               = 0
+
+[bar/horizontal_monitor_top]
+background               = {{ theme.colors.black }}ff
+border-color             = {{ theme.colors.black }}
+border-size              = 0
+cursor-click             = pointer
+cursor-scroll            = arrow
+enable-ipc               = true
+fixed-center             = true
+font-0                   = {{ theme.fonts.redhat.text }} Medium:size=13;4
+font-1                   = {{ theme.fonts.isologotype.text }}:size=14;4
+font-2                   = {{ theme.fonts.isologotype.icon }}:size=25;5
+font-3                   = {{ theme.fonts.icons }}:size=16;5
+foreground               = {{ theme.colors.white }}
+height                   = 40
+module-margin            = 2
+modules-center           = bspwm
+modules-left             = redhat
+modules-right            = date bluetooth kerberos vpn wireless-network battery
+monitor                  = ${env:MONITOR}
+padding-left             = 5
+padding-right            = 5
+scroll-down              = bspwm-desknext
+scroll-up                = bspwm-deskprev
+width                    = 100%
+wm-restack               = bspwm
+
+[bar/vertical_monitor_top]
+background               = {{ theme.colors.black }}ff
+border-color             = {{ theme.colors.black }}
+border-size              = 0
+cursor-click             = pointer
+cursor-scroll            = arrow
+enable-ipc               = true
+fixed-center             = true
+font-0                   = {{ theme.fonts.redhat.text }} Medium:size=13;4
+font-1                   = {{ theme.fonts.isologotype.text }}:size=14;4
+font-2                   = {{ theme.fonts.isologotype.icon }}:size=25;5
+font-3                   = {{ theme.fonts.icons }}:size=16;5
+foreground               = {{ theme.colors.white }}
+height                   = 40
+module-margin            = 2
+modules-left             = redhat
+modules-right            = date bluetooth kerberos vpn wireless-network battery
+monitor                  = ${env:MONITOR}
+padding-left             = 5
+padding-right            = 5
+width                    = 100%
+
+[module/battery]
+type                     = internal/battery
+adapter                  = ADP1
+battery                  = BAT0
+format-discharging       = <ramp-capacity>
+full-at                  = 99
+label-charging           = 
+label-full               = 
+poll-interval            = 5
+ramp-capacity-0          = %{F{{ theme.colors.red.normal }}}%{F-}
+ramp-capacity-1          = 
+ramp-capacity-2          = 
+ramp-capacity-3          = 
+ramp-capacity-4          = 
+time-format              = %H:%M
+
+[module/bluetooth]
+type                     = custom/script
+click-left               = ~/.config/polybar/scripts/bluetooth.sh connect 2C:41:A1:04:57:7D
+click-right              = ~/.config/polybar/scripts/bluetooth.sh disconnect 2C:41:A1:04:57:7D
+exec                     = ~/.config/polybar/scripts/bluetooth.sh info 2C:41:A1:04:57:7D
+interval                 = 1
+
+[module/bspwm]
+type                     = internal/bspwm
+enable-scroll            = false
+label-empty              = %icon%
+label-empty-foreground   = {{ theme.colors.gray.dark }}
+label-empty-padding      = 4
+label-focused            = %icon%
+label-focused-background = {{ theme.colors.red.normal }}
+label-focused-foreground = {{ theme.colors.white }}
+label-focused-padding    = 4
+label-occupied           = %icon%
+label-occupied-padding   = 4
+label-urgent             = %icon%
+label-urgent-foreground  = {{ theme.colors.red.normal }}
+label-urgent-padding     = 4
+ws-icon-0                = main;
+ws-icon-1                = communication;
+ws-icon-2                = code;
+ws-icon-3                = organization;
+ws-icon-4                = coffee;
+ws-icon-5                = music;
+
+[module/date]
+type                     = internal/date
+date                     = %b %d
+interval                 = 5
+label                    = %date%  %time%
+time                     = %H:%M
+
+[module/kerberos]
+type                     = custom/script
+click-left               = ~/.config/polybar/scripts/kerberos.sh init /etc/ipa/idm.keytab damoreno@IPA.REDHAT.COM
+click-right              = ~/.config/polybar/scripts/kerberos.sh destroy
+exec                     = ~/.config/polybar/scripts/kerberos.sh info
+format                   = <label>
+interval                 = 1
+
+[module/redhat]
+type                     = custom/text
+content                  = %{T3} %{T2}%{F{{ theme.colors.white }}}Red Hat%{F-}
+content-foreground       = {{ theme.colors.red.normal }}
+
+[module/vpn]
+type                     = custom/script
+exec                     = ~/.config/polybar/scripts/vpn.sh
+interval                 = 1
+
+[module/wireless-network]
+type                     = internal/network
+interface                = wlp0s20f3
+interval                 = 3
+label-connected          = 
+label-disconnected       = 

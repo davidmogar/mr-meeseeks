@@ -15,10 +15,17 @@
     owner: "{{ user_id }}"
     src: polybar
 
-- name: Create symbolic link to theme
-  file:
-    dest: "{{ user_home }}/.config/polybar/config"
+- name: Create polybar config file
+  template:
+    dest: "{{ user_home }}/.config/polybar/config.ini"
     group: "{{ user_id }}"
     owner: "{{ user_id }}"
-    src: "{{ user_home }}/.config/polybar/themes/{{ theme_name }}"
-    state: link
+    src: "themes/{{ theme_name }}/config.ini.j2"
+
+- name: Create polybar scripts colors
+  template:
+    dest: "{{ user_home }}/.config/polybar/scripts/colors.sh"
+    group: "{{ user_id }}"
+    mode: 0755
+    owner: "{{ user_id }}"
+    src: "themes/{{ theme_name }}/colors.sh.j2"
