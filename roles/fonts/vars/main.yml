@@ -1,5 +1,7 @@
 ---
 
+fonts_directory: "/usr/share/fonts"
+
 fonts_packages:
   - google-noto-cjk-fonts
   - google-noto-emoji-fonts
@@ -8,4 +10,3 @@ fonts_packages:
   - google-roboto-fonts
   - levien-inconsolata-fonts
   - material-icons-fonts
-  - redhat-display-fonts

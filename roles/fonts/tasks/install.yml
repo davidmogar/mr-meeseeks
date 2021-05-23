@@ -14,7 +14,7 @@
     state: directory
   with_items:
     - fontawesome
-    - nerfonts
+    - redhat
 
 - name: Fetch Fonts Awesome latest release webpage
   uri:
@@ -39,36 +39,42 @@
   become: yes
   unarchive:
     dest: "{{ fonts_directory }}/fontawesome"
+    #include: # added in ansible 2.11
+    #  - "*/otfs/*"
     exclude:
-      - "*/metadata/*"
-      - "*/svgs/*"
+      - "*.svg"
     mode: 0755
     remote_src: yes
     src: "https://github.com{{ fontawesome_zip }}"
 
-- name: Fetch Nerd Fonts latest release webpage
+- name: Fetch Red Hat Fonts latest release webpage
   uri:
     follow_redirects: "yes"
     method: GET
     return_content: yes
-    url: "https://github.com/ryanoasis/nerd-fonts/releases/latest/"
+    url: "https://github.com/RedHatOfficial/RedHatFont/releases/latest/"
   check_mode: no
   delay: 10
   register: release_webpage_raw
   retries: 30
   until: release_webpage_raw is succeeded
 
-- name: Set Nerd Fonts download url
+- name: Set Red Hat Fonts download url
   check_mode: no
   set_fact:
-    nerdfonts_zip: "{{ release_webpage_raw.content | regex_search(package_regex) }}"
+    redhat_zip: "{{ release_webpage_raw.content | regex_search(package_regex) }}"
   vars:
-    package_regex: '/ryanoasis/nerd-fonts/releases/download/.*3270\.zip'
+    package_regex: '/RedHatOfficial/RedHatFont/archive/refs/tags/.*\.zip'
 
-- name: Ensure Nerd Fonts is downloaded
+- name: Ensure Red Hat Fonts is downloaded
   become: yes
   unarchive:
-    dest: "{{ fonts_directory }}/nerfonts"
+    dest: "{{ fonts_directory }}/redhat"
+    #include: # added in ansible 2.11
+    #  - "*/webfonts/*"
+    exclude:
+     - "*/webfonts/*"
     mode: 0755
     remote_src: yes
-    src: "https://github.com{{ nerdfonts_zip }}"
+    src: "https://github.com{{ redhat_zip }}"
+  
