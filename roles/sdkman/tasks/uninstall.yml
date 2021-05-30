@@ -1,0 +1,6 @@
+---
+
+- name: Ensure sdkman directory is removed
+  file:
+    path: "{{ user_home }}/.config/sdkman"
+    state: absent

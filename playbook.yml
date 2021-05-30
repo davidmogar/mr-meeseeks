@@ -127,6 +127,11 @@
     - rofi
 
 - hosts: all
+  roles: [ sdkman ]
+  tags:
+    - sdkman
+
+- hosts: all
   roles: [ sound ]
   tags:
     - desktop

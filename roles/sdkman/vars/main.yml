@@ -1,0 +1,6 @@
+---
+
+sdkman_packages:
+  - curl
+  - unzip
+  - zip

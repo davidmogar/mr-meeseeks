@@ -114,6 +114,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://pipewire.org/">pipewire</a> and configure <a href="https://www.alsa-project.org/wiki/Main_Page">Alsa</a>.</td>
     </tr>
     <tr>
+      <td><a href="roles/sdkman">sdkman</a></td>
+      <td>Installs <a href="https://sdkman.io">sdkman</a></td>
+    </tr>
+    <tr>
       <td><a href="roles/sudo">sudo</a></td>
       <td>Configures sudoers file.</td>
     </tr>

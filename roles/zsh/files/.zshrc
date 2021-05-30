@@ -15,3 +15,9 @@ done
 if [ -L $ZSH/themes/default.zsh ]; then
   source $ZSH/themes/default.zsh
 fi
+
+#------------------------------
+# Source sdkman
+#------------------------------
+export SDKMAN_DIR=".config/sdkman"
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
