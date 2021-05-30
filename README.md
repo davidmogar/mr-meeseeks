@@ -98,6 +98,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs <a href="https://neovim.io/">Neovim</a>.</td>
     </tr>
     <tr>
+      <td><a href="roles/picom">picom</a></td>
+      <td>Installs <a href="https://github.com/yshui/picom">picom</a> compositor.</td>
+    </tr>
+    <tr>
       <td><a href="roles/polybar">polybar</a></td>
       <td>Installs <a href="https://github.com/polybar/polybar">polybar</a>.</td>
     </tr>

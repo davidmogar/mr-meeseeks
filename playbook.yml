@@ -107,6 +107,13 @@
   tags: neovim
 
 - hosts: all
+  roles: [ picom ]
+  tags:
+    - bspwm
+    - desktop
+    - picom
+
+- hosts: all
   roles: [ polybar ]
   tags:
     - bspwm
