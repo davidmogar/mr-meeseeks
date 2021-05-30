@@ -94,6 +94,10 @@ Note that both, limit and tags, are optional arguments.
       <td>Installs a curated <a href="roles/fonts/vars/main.yml">list</a> of fonts.</td>
     </tr>
     <tr>
+      <td><a href="roles/irssi">irssi</a></td>
+      <td>Installs <a href="https://irssi.org/">irssi</a>.</td>
+    </tr>
+    <tr>
       <td><a href="roles/neovim">neovim</a></td>
       <td>Installs <a href="https://neovim.io/">Neovim</a>.</td>
     </tr>

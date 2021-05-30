@@ -103,6 +103,10 @@
     - fonts
 
 - hosts: all
+  roles: [ irssi ]
+  tags: irssi
+
+- hosts: all
   roles: [ neovim ]
   tags: neovim
 

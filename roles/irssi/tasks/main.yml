@@ -1,0 +1,7 @@
+---
+
+- include_tasks: install.yml
+  when: irssi == 'install'
+
+- include_tasks: uninstall.yml
+  when: irssi == 'remove'
