@@ -1,4 +1,4 @@
-<p align="center"><img height="250" src="https://github.com/davidmogar/mr-meeseeks/blob/resources/mr-meeseeks-min.png?raw=true"></p>
+<p align="center"><img height="250" src="https://github.com/davidmogar/mr-meeseeks-fedora/blob/resources/mr-meeseeks-min.png?raw=true"></p>
 
 <p align="center"><strong>An Ansible playbook to configure a Fedora workstation</strong></p>
 <p align="center">
