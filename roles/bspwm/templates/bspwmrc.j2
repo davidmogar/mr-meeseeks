@@ -32,6 +32,8 @@ configure_keybindings() {
 }
 
 configure_monitors() {
+    bspc desktop Desktop --remove
+
     monitors=$(xrandr --listactivemonitors | grep -v Monitors | wc -l)
 
     if [[ $monitors -eq 1 ]]
